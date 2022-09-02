@@ -13,7 +13,7 @@ const args = require('minimist')(process.argv);
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
 
-const PORT = args.PORT || 3000;
+const PORT = args.port || 3000;
 
 
 
