@@ -32,6 +32,11 @@ fs.readFile('./public/index.html', 'utf8', (err, data) => {
     return;
   }
   console.log(data);
+  const server = require('http').createServer(function(req, res) {
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/html");
+  res.end(data);
+});
 });
 
 
@@ -42,11 +47,7 @@ fs.readFile('./public/index.html', 'utf8', (err, data) => {
 // 2. set a header with content type `text/html`, and 
 // 3. end with the data that you are reading in from ./public/index.html.
 
-const server = require('http').createServer(function(req, res) {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/html");
-  res.end(req.data);
-});
+
 
 
 
